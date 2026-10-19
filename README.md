@@ -27,7 +27,7 @@ The text is dropped into a library of carousel templates I designed, in French a
 
 ## Guides
 
-- [10 Chinese herbs that belong in your life](10-chinese-herbs-guide.html)
+- [10 Chinese herbs that belong in your life](10-chinese-herbs-guide.pdf)
 - [5 TCM ingredients that change everything](5-tcm-ingredients-guide.pdf)
 
 ## Run it yourself
