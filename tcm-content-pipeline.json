@@ -1,0 +1,187 @@
+{
+  "name": "TCM content pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "01dd579b-d58e-4d78-a46a-acec21e4e3d7",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "claude-sonnet-4-6",
+          "mode": "list",
+          "cachedResultName": "claude-sonnet-4-6"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Tu es un expert en médecine traditionnelle chinoise (MTC) et en contenu Instagram éducatif. Génère un carrousel Instagram complet sur ce sujet : \"Pourquoi vous êtes toujours fatigué·e selon la MTC\"\n\nSLIDE 1 (Hook): écris un titre accrocheur sous forme de question ou affirmation surprenante\nSLIDE 2: première cause de fatigue selon la MTC\nSLIDE 3: deuxième cause de fatigue selon la MTC\nSLIDE 4: troisième cause de fatigue selon la MTC\nSLIDE 5: signes que vos reins sont en vide d'énergie\nSLIDE 6: alimentation MTC anti-fatigue — 3 aliments clés\nSLIDE 7 (Conseil actionnable): un rituel simple à appliquer dès ce soir\nSLIDE 8 (CTA): invite à sauvegarder et partager\nLÉGENDE FR: légende Instagram complète en français avec émojis\nLÉGENDE EN: même légende en anglais\nHASHTAGS FR: 15 hashtags en français\nHASHTAGS EN: 15 hashtags en anglais\n\nTon : sérieux mais accessible. Phrases courtes. Jamais de promesses médicales."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.anthropic",
+      "typeVersion": 1,
+      "position": [
+        192,
+        0
+      ],
+      "id": "0bbb3db9-5c81-490d-848d-8ec7b2cb9eae",
+      "name": "Message a model"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{$now}}",
+            "Sujet": "Pourquoi vous êtes toujours fatigué·e selon la MTC",
+            "Slides FR": "={{ $json.content[0].text }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sujet",
+              "displayName": "Sujet",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Slides FR",
+              "displayName": "Slides FR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Légende FR",
+              "displayName": "Légende FR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Slides EN",
+              "displayName": "Slides EN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        560,
+        0
+      ],
+      "id": "fa9e76ab-eb9e-45cd-adf0-febe67e56a05",
+      "name": "Append row in sheet"
+    },
+    {
+      "parameters": {
+        "sendTo": "you@example.com",
+        "subject": "MTC Email",
+        "message": "Bonjour,  Ton pipeline MTC a généré du nouveau contenu ce matin.  Ouvre ta Google Sheet \"Pipeline MTC\" pour voir et valider le carrousel du jour.  Bonne création !",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        768,
+        0
+      ],
+      "id": "b599f532-73b6-457d-86e3-ca0542fa63d7",
+      "name": "Send a message"
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

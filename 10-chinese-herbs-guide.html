@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 Chinese Herbs That Belong in Your Life — @dailyherbchinese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F0D09;
+    --cream: #F7F1E6;
+    --cream2: #EDE5D2;
+    --gold: #C8964A;
+    --terra: #B5513A;
+    --sage: #6A8C6D;
+    --mid: #7A6B52;
+    --light: #FAF6EE;
+    --highlight: #FFF0C4;
+    --highlight2: rgba(106,140,109,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--light);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--ink);
+    margin: 0 -24px;
+    padding: 64px 40px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '藥';
+    position: absolute;
+    font-size: 320px;
+    font-family: 'Playfair Display', serif;
+    color: rgba(200,150,74,0.05);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .cover-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 7vw, 52px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .cover h1 em {
+    color: var(--gold);
+    font-style: normal;
+    display: block;
+  }
+  .cover-sub {
+    color: rgba(247,241,230,0.45);
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .cover-account {
+    margin-top: 28px;
+    display: inline-block;
+    background: rgba(200,150,74,0.15);
+    border: 1px solid rgba(200,150,74,0.3);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid rgba(122,107,82,0.12);
+  }
+  .intro p {
+    color: var(--mid);
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  .intro p:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--cream2);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin: 32px 0;
+  }
+  .toc-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+  .toc-list li a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .toc-list li a:hover { color: var(--gold); }
+  .toc-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── HERB SECTION ── */
+  .herb {
+    padding: 52px 0 40px;
+    border-bottom: 1px solid rgba(122,107,82,0.1);
+  }
+  .herb:last-of-type { border-bottom: none; }
+
+  .herb-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .herb-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .herb-chinese {
+    font-size: 28px;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 4px;
+  }
+
+  .herb-pinyin {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--mid);
+    margin-bottom: 20px;
+  }
+
+  /* Energetics pill row */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .pill {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+  .pill-nature { background: rgba(181,81,58,0.1); color: var(--terra); }
+  .pill-organ  { background: rgba(106,140,109,0.12); color: var(--sage); }
+  .pill-flavor { background: rgba(200,150,74,0.12); color: var(--gold); }
+
+  /* Sections within herb */
+  .herb-section {
+    margin-bottom: 20px;
+  }
+  .herb-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .herb-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(200,150,74,0.2);
+  }
+
+  .herb-section p {
+    color: var(--mid);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* Highlight boxes */
+  .highlight-box {
+    background: var(--highlight);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .highlight-box-sage {
+    background: var(--highlight2);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* Bold highlights */
+  strong { color: var(--ink); font-weight: 600; }
+  em.gold { color: var(--gold); font-style: normal; font-weight: 600; }
+  em.terra { color: var(--terra); font-style: normal; font-weight: 600; }
+  em.sage { color: var(--sage); font-style: normal; font-weight: 600; }
+
+  /* How to use list */
+  .use-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .use-list li {
+    color: var(--mid);
+    font-size: 15px;
+    padding: 6px 0 6px 22px;
+    position: relative;
+    border-bottom: 1px solid rgba(122,107,82,0.07);
+  }
+  .use-list li:last-child { border-bottom: none; }
+  .use-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* Warning box */
+  .warning {
+    background: rgba(181,81,58,0.06);
+    border: 1px solid rgba(181,81,58,0.2);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--mid);
+    margin-top: 16px;
+  }
+  .warning strong { color: var(--terra); }
+
+  /* Formula box */
+  .formula {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 16px;
+  }
+  .formula-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .formula p {
+    color: var(--cream);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .formula p strong { color: var(--gold); }
+
+  /* Divider ornament */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    opacity: 0.3;
+    font-size: 20px;
+    margin: 8px 0;
+    letter-spacing: 8px;
+  }
+
+  /* ── SUMMARY TABLE ── */
+  .summary {
+    margin: 48px 0;
+    overflow-x: auto;
+  }
+  .summary h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    text-align: left;
+  }
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(122,107,82,0.1);
+    color: var(--mid);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--cream2); }
+  td:first-child { color: var(--ink); font-weight: 500; }
+  td strong { color: var(--terra); font-weight: 500; }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    background: var(--ink);
+    margin: 0 -24px;
+    padding: 56px 40px;
+    color: var(--cream);
+  }
+  .conclusion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .conclusion p {
+    color: rgba(247,241,230,0.65);
+    font-size: 15px;
+    margin-bottom: 16px;
+    line-height: 1.75;
+  }
+  .conclusion p strong { color: var(--cream); }
+  .conclusion-account {
+    margin-top: 36px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    .toc-list { grid-template-columns: 1fr; }
+    .cover { padding: 48px 24px 40px; }
+    .conclusion { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Free Guide · @dailyherbchinese</div>
+  <h1>10 Chinese Herbs<em>That Belong in Your Life</em></h1>
+  <p class="cover-sub">Ancient wisdom. Modern science. No mysticism required.</p>
+  <div class="cover-account">@dailyherbchinese</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p>Chinese medicine has been cataloguing herbs for over 2,000 years. Most of what it discovered, modern pharmacology is only now confirming.</p>
+  <p>This guide covers <strong>10 herbs you can actually use</strong> — available at most Asian grocery stores, backed by research, and rooted in a system that treated the whole person long before that idea became a wellness trend.</p>
+  <p>No credentials required. Start with one. See what changes.</p>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">In this guide</div>
+    <ul class="toc-list">
+      <li><a href="#ginger"><span class="toc-num">01</span> Fresh Ginger</a></li>
+      <li><a href="#goji"><span class="toc-num">02</span> Goji Berries</a></li>
+      <li><a href="#jujube"><span class="toc-num">03</span> Jujube Dates</a></li>
+      <li><a href="#astragalus"><span class="toc-num">04</span> Astragalus</a></li>
+      <li><a href="#reishi"><span class="toc-num">05</span> Reishi</a></li>
+      <li><a href="#chrysanthemum"><span class="toc-num">06</span> Chrysanthemum</a></li>
+      <li><a href="#longan"><span class="toc-num">07</span> Longan</a></li>
+      <li><a href="#hawthorn"><span class="toc-num">08</span> Hawthorn</a></li>
+      <li><a href="#schisandra"><span class="toc-num">09</span> Schisandra</a></li>
+      <li><a href="#lotus"><span class="toc-num">10</span> Lotus Seed</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 01 — GINGER -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="ginger">
+  <div class="herb-number">Herb 01 / 10</div>
+  <div class="herb-chinese">生姜</div>
+  <div class="herb-pinyin">Shēng Jiāng · Fresh Ginger</div>
+  <h2 class="herb-title">The herb that warms the surface and rescues the stomach</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Warm nature</span>
+    <span class="pill pill-flavor">Pungent</span>
+    <span class="pill pill-organ">Lung · Spleen · Stomach</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>In TCM, ginger is classically called <strong>"the sage herb for vomiting."</strong> It fights early colds by gently promoting sweating to push out pathogens, settles nausea by directing rebellious Stomach Qi downward, and warms the lungs. It also <strong>detoxifies other potent herbs</strong>, serving as a safety buffer in formulas.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      <strong>Fresh and dried ginger are two entirely different medicines.</strong> Fresh ginger (Shēng Jiāng) is warm. Dried ginger (Gān Jiāng) is <em class="terra">hot</em> — and acts on an additional organ, the Heart. The chemistry confirms this: drying transforms 6-gingerol into <strong>6-shogaol</strong>, a compound markedly more potent for anti-inflammatory activity. TCM recognized this 2,000 years before chemistry existed.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Galanolactone in ginger acts as a <strong>competitive antagonist at serotonin 5-HT3 receptors</strong> — the same target as ondansetron (Zofran), a leading prescription anti-nausea drug. A trial of 576 cancer patients confirmed ginger significantly reduces chemotherapy-induced nausea.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Slice 3–5 thin coins into hot water, steep 10 min, add honey</li>
+      <li>Boil with two scallion whites and brown sugar for a cold remedy — drink hot, then bundle up</li>
+      <li>Add freely to soups, stir-fries, and congee</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Caution:</strong> Avoid with warfarin or blood thinners. Stop supplements 2 weeks before surgery. Not for people who run hot or have acid reflux.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Guì Zhī Tāng (桂枝汤)</strong> — "Cinnamon Twig Decoction." The grandmother of hundreds of TCM formulas. Treats early-stage colds and harmonizes the body's defenses.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 02 — GOJI -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="goji">
+  <div class="herb-number">Herb 02 / 10</div>
+  <div class="herb-chinese">枸杞子</div>
+  <div class="herb-pinyin">Gǒu Qǐ Zǐ · Goji Berry</div>
+  <h2 class="herb-title">The world's richest source of zeaxanthin</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Neutral</span>
+    <span class="pill pill-flavor">Sweet</span>
+    <span class="pill pill-organ">Liver · Kidney</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Goji nourishes the Liver and Kidneys, replenishing what TCM calls <strong>Jing</strong> — the deepest vital reserves. Its most celebrated function is <strong>brightening the eyes</strong>: the Liver "opens to the eyes," and when Liver Yin depletes from screen time, stress, or aging, vision suffers. Goji also tonifies Blood for fatigue and pale complexion.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      <strong>Goji berries belong to the nightshade family</strong> — alongside tomatoes, potatoes, and tobacco. People following nightshade-elimination diets for autoimmune protocols may need to avoid them. Also: despite being a Yin tonic, goji can <em class="gold">also strengthen Kidney Yang</em> when paired with warming herbs — making it a rare dual-action herb.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Goji berries contain <strong>31–56% zeaxanthin</strong> of total carotenoids — the richest known natural dietary source. A clinical trial found that adults eating 28g of goji berries five times weekly for 90 days showed significantly increased macular pigment optical density, a protective biomarker against age-related macular degeneration. A supplement group did not.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Eat 10–30g raw daily like raisins</li>
+      <li>Steep 10–15 berries with chrysanthemum flowers for classic Chinese eye-health tea</li>
+      <li>Add to congee, chicken soup, oatmeal, or smoothies</li>
+      <li>Eat the berries after steeping — don't waste them</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Critical:</strong> Multiple documented cases of dangerous bleeding in patients on warfarin. Interacts with statins, benzodiazepines, and calcium channel blockers. Avoid during colds or flu.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Qǐ Jú Dì Huáng Wán (杞菊地黄丸)</strong> — "Lycium, Chrysanthemum & Rehmannia Pill." The go-to OTC formula for blurred vision, dry eyes, dizziness from Liver-Kidney Yin deficiency.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 03 — JUJUBE -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="jujube">
+  <div class="herb-number">Herb 03 / 10</div>
+  <div class="herb-chinese">大枣</div>
+  <div class="herb-pinyin">Dà Zǎo · Red Jujube Date</div>
+  <h2 class="herb-title">The quiet "bass player" of Chinese medicine</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Warm</span>
+    <span class="pill pill-flavor">Sweet</span>
+    <span class="pill pill-organ">Spleen · Stomach · Heart</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Jujube strengthens the digestive system, nourishes Blood, and calms the mind for anxiety and restless sleep. Its most distinctive role is as a <strong>formula harmonizer</strong> — it moderates harsh herbs, protects the stomach from irritation, and improves absorption of other ingredients.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      Jujube appears in <strong>more classical TCM formulas than almost any other herb</strong> — not because of its own potency (it's quite mild), but because it makes every other herb work better. It's the bass player of Chinese medicine: rarely the star, but the formula collapses without it. Additionally, jujube contains <em class="gold">the highest concentration of cyclic adenosine monophosphate (cAMP) found in any of 180+ natural plants tested</em> — a critical molecule regulating cellular growth and immune response.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Jujuboside A — the key sedative compound — works through <strong>GABAergic modulation</strong>, upregulating GABA and enhancing receptor expression. This is the same pathway as many pharmaceutical sleep aids. Its saponins and triterpenoids exert anti-inflammatory activity through the NF-κB pathway.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Simmer 5–8 pitted dates in water 20 min with ginger slices for daily tonic tea</li>
+      <li>Add 6–8 dates to rice congee for a classic nourishing breakfast</li>
+      <li>Eat 3–5 whole dates as a mid-afternoon snack</li>
+      <li>Always remove pits — they are thought to create excess heat</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Caution:</strong> Avoid with bloating or loose stools. High natural sugars require caution in diabetes. May interact with venlafaxine and medications metabolized by CYP1A2.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Gān Mài Dà Zǎo Tāng (甘麦大枣汤)</strong> — Just three pantry ingredients for emotional instability, unexplained crying, anxiety, and insomnia. 1,800 years old. Confirmed effective in clinical reviews for depression.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 04 — ASTRAGALUS -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="astragalus">
+  <div class="herb-number">Herb 04 / 10</div>
+  <div class="herb-chinese">黄芪</div>
+  <div class="herb-pinyin">Huáng Qí · Astragalus</div>
+  <h2 class="herb-title">The herb that activates the enzyme governing cellular aging</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Slightly Warm</span>
+    <span class="pill pill-flavor">Sweet</span>
+    <span class="pill pill-organ">Lung · Spleen</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Astragalus's signature function is strengthening <strong>Wei Qi (defensive Qi)</strong> — the body's invisible force field circulating at the skin and mucous membranes. When Wei Qi is weak, you catch every cold. <em class="terra">Critical caveat:</em> use it preventively or during recovery — never during an active infection with fever, as it can trap the pathogen inside.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      Astragalus is the only traditional herb from which a compound — <strong>cycloastragenol (TA-65)</strong> — has been developed and clinically validated as a <em class="gold">telomerase activator that slows biological aging</em>. A root that Chinese herbalists called a "longevity tonic" for 2,000+ years has been validated at the molecular level as acting on one of the most fundamental mechanisms of aging: telomere maintenance.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>A 2024 randomized, double-blind, placebo-controlled trial of 40 healthy volunteers confirmed six months of astragalus supplementation <strong>significantly lengthened both median and short telomeres</strong>. Its polysaccharides enhance NK cell activity, macrophage function, and T-cell proliferation.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Add 5–10 dried slices to chicken soup — simmer 30+ minutes, remove before eating</li>
+      <li>Simmer 9–15g with goji and red dates for 20–30 min as a tonic tea</li>
+      <li>Honey-prepared astragalus (蜜炙黄芪) available at Chinese herb shops works deeper for Spleen/Lung</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Caution:</strong> Never use during acute illness with fever. Stimulates the immune system — avoid in lupus, RA, MS. Major interaction with tacrolimus (reduced blood levels by ~50%). Interacts with anticoagulants and diabetes medications.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Yù Píng Fēng Sǎn (玉屏风散)</strong> — "Jade Windscreen Powder." Just three herbs. Builds the immune system for people who catch every cold, chronic allergies, and spontaneous sweating. The name imagines a precious shield.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 05 — REISHI -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="reishi">
+  <div class="herb-number">Herb 05 / 10</div>
+  <div class="herb-chinese">灵芝</div>
+  <div class="herb-pinyin">Líng Zhī · Reishi Mushroom</div>
+  <h2 class="herb-title">Once rarer than gold, reserved for emperors</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Warm</span>
+    <span class="pill pill-flavor">Bitter</span>
+    <span class="pill pill-organ">All five Yin organs</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Reishi is first and foremost a <strong>Shen (spirit) calming herb</strong> — ancient China's answer to chronic stress and insomnia. It settles an overactive mind, promotes deep sleep, reduces anxiety, and supports emotional balance. One of the few herbs that supports all Three Treasures: Jing, Qi, and Shen simultaneously.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      Before cultivation techniques developed in the 1970s, <strong>only 2–3 out of every 10,000 aged trees</strong> had Reishi growing at their base in the wild. Its extreme scarcity made it more expensive than gold and accessible only to royalty. The <em class="gold">Shennong Ben Cao Jing</em> classified it among the "superior herbs" safe for lifelong daily use. Taoist legends spoke of secret islands where sacred groves of Reishi grew.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Over <strong>400 bioactive compounds</strong> identified, including 130+ triterpenes (anti-inflammatory, hepatoprotective) and 200+ polysaccharide β-glucans (activate macrophages, NK cells, T-cells). A 2023 RCT of 126 healthy adults confirmed statistically significant increases in T-lymphocyte populations.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Simmer 3–5g dried slices in water for 20–30 minutes</li>
+      <li>Add ½–1 tsp powder to coffee, hot cacao, or smoothies</li>
+      <li><strong>Best taken in the evening</strong> — leverages sleep-promoting properties</li>
+      <li>Benefits build with daily use over weeks, not days</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Caution:</strong> Stop 2 weeks before surgery (anticoagulant effect). Avoid with immunosuppressants (counteracts them). One case of fatal hepatitis with powder. Moderate interactions with at least 69 drugs including antihypertensives and diabetes medications.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Suān Zǎo Rén Tāng (酸枣仁汤)</strong> — TCM's most famous sleep formula. Reishi is added to deepen its spirit-calming capacity. Treats insomnia, palpitations, and night sweats from Liver Blood deficiency.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 06 — CHRYSANTHEMUM -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="chrysanthemum">
+  <div class="herb-number">Herb 06 / 10</div>
+  <div class="herb-chinese">菊花</div>
+  <div class="herb-pinyin">Jú Huā · Chrysanthemum Flower</div>
+  <h2 class="herb-title">The "screen fatigue" herb with a 2,000-year festival</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Slightly Cold</span>
+    <span class="pill pill-flavor">Sweet · Bitter</span>
+    <span class="pill pill-organ">Liver · Lung</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Chrysanthemum's most famous use is <strong>clearing Liver heat to benefit the eyes</strong> — for red, dry, tired, or blurry eyes and light sensitivity. In TCM, the Liver "opens to the eyes." In the modern world, this makes it essentially the <em class="gold">digital eye strain herb</em>. Also calms Liver Yang rising for dizziness, tension headaches, and hypertension.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      Chrysanthemum has its own national festival — the <strong>Double Ninth Festival (重阳节)</strong>, celebrated on the 9th day of the 9th lunar month for over 2,000 years. People drink chrysanthemum wine, eat chrysanthemum cakes, display the flowers for longevity. Also: <em class="gold">white chrysanthemum</em> is best for nourishing the eyes, while <em class="terra">yellow chrysanthemum</em> is stronger for wind-heat colds. The variety changes the medicine.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Key compound <strong>luteolin</strong> demonstrated neuroprotective effects by suppressing microglia-mediated neuroinflammation. A 2025 study found chrysanthemum extract enhanced sleep via GABAergic modulation. Research validated luteolin's mechanisms in mitigating dry age-related macular degeneration — <strong>providing modern basis for the ancient eye-health claim.</strong></p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Steep 5–8 dried flower heads in boiling water 3–5 min. Re-steep 2–3 times</li>
+      <li>Add 8–10 goji berries — classic Chinese daily eye-health combo</li>
+      <li>Brew strong, chill, serve over ice with rock sugar for a Chinese summer drink</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Critical:</strong> Ragweed allergy = avoid (same plant family). Transplant patients must avoid — inhibits CYP3A4, causing toxic drug levels. Documented case: kidney transplant patient hospitalized after drinking chrysanthemum tea.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Sāng Jú Yǐn (桑菊饮)</strong> — "Mulberry Leaf & Chrysanthemum Decoction." Combines chrysanthemum with mulberry leaf for early-stage wind-heat colds with cough and sore throat.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 07 — LONGAN -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="longan">
+  <div class="herb-number">Herb 07 / 10</div>
+  <div class="herb-chinese">龙眼肉</div>
+  <div class="herb-pinyin">Lóng Yǎn Ròu · Longan Fruit</div>
+  <h2 class="herb-title">Named "Dragon Eye" — and it's literal, not mythology</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Warm</span>
+    <span class="pill pill-flavor">Sweet</span>
+    <span class="pill pill-organ">Heart · Spleen</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Longan nourishes Blood and calms the mind simultaneously. It addresses the <strong>Heart-Spleen connection</strong>: when both are depleted from overwork, illness, or childbirth, you get insomnia, anxiety, forgetfulness, palpitations, fatigue, and pale complexion all at once. Longan replenishes both. It's a staple in Chinese <strong>postpartum recovery traditions</strong>.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      <strong>The name is literal anatomy, not mythology.</strong> Peel away the shell and the translucent white flesh with a black seed at the center looks uncannily like an eyeball — a dark pupil surrounded by a white iris. Despite being closely related to lychee, <em class="gold">longan is considered medicinally warmer and more tonifying</em>. Lychee is the flashier cousin; longan is the quiet medicinal powerhouse.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Longan aril ameliorated cognitive impairment in Alzheimer's disease mice via the <strong>RAS/MEK/ERK signaling pathway</strong> — directly supporting TCM's memory-improvement claim. Longan flower extract proved more potent than glutathione as an antioxidant and protected the dopaminergic system relevant to Parkinson's research.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Simmer 8–12 dried pieces with red dates and goji for blood-building tea</li>
+      <li>Add to rice congee or chicken soup</li>
+      <li>Eat 5–10 dried pieces daily like raisins</li>
+      <li>Postpartum: 20g longan + 10 red dates + ginger slices in broth</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Caution:</strong> Avoid if you run hot (red face, irritability) — can paradoxically cause insomnia and nosebleeds in excess. High natural sugar (~60–70% by weight). Not for dampness or phlegm-fire patterns.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Guī Pí Tāng (归脾汤)</strong> — "Restore the Spleen Decoction," from 1253 CE. The definitive formula for Heart-Spleen dual deficiency: fatigue, insomnia, anxiety, forgetfulness, palpitations. Longan is a principal herb.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 08 — HAWTHORN -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="hawthorn">
+  <div class="herb-number">Herb 08 / 10</div>
+  <div class="herb-chinese">山楂</div>
+  <div class="herb-pinyin">Shān Zhā · Hawthorn Berry</div>
+  <h2 class="herb-title">The digestive herb that Western cardiology discovered independently</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Slightly Warm</span>
+    <span class="pill pill-flavor">Sour · Sweet</span>
+    <span class="pill pill-organ">Spleen · Stomach · Liver · Heart</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Hawthorn is TCM's go-to for <strong>food stagnation</strong> — the heavy, bloated, stuck feeling after overeating, especially from greasy meat-heavy meals. It "conquers and cuts down" accumulated food, invigorates blood circulation, and transforms lipid accumulation. A centuries-old after-dinner herb.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      Here lies one of the most striking East-West divergences in herbal medicine. <strong>In TCM, hawthorn is a digestive herb (used 1,400+ years for stomach complaints). In Western medicine, it's researched almost exclusively as a heart medicine.</strong> Both traditions are correct — the same compounds that break down fats in digestion also dilate coronary vessels, reduce cholesterol, and strengthen cardiac contractions. Hawthorn is also <em class="gold">the original fruit in tanghulu (冰糖葫芦)</em> — the iconic candied fruit skewers that went viral on TikTok.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>The landmark SPICE trial enrolled <strong>2,681 heart failure patients</strong> across 13 European countries and found standardized hawthorn extract may reduce sudden cardiac death. A meta-analysis confirmed significant improvement in exercise tolerance and cardiac function versus placebo.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Steep 9–15g dried sliced berries in hot water 10–15 min after heavy meals</li>
+      <li>Brew 5–6 dried slices with tangerine peel for a quick digestive tea</li>
+      <li>Haw flakes (山楂片) — the pink candy discs at Asian markets — mildly medicinal and delicious</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Critical:</strong> Major interaction with digoxin, beta-blockers, and PDE5 inhibitors (sildenafil). Moderate interactions with at least 51 drugs. Stop 2 weeks before surgery. Avoid misuse without food stagnation — long-term use weakens Spleen Qi.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Bǎo Hé Wán (保和丸)</strong> — "Preserve Harmony Pill," Yuan Dynasty. TCM's comprehensive after-dinner digestive. Hawthorn as chief herb. Widely available OTC and often recommended as a travel companion.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 09 — SCHISANDRA -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="schisandra">
+  <div class="herb-number">Herb 09 / 10</div>
+  <div class="herb-chinese">五味子</div>
+  <div class="herb-pinyin">Wǔ Wèi Zǐ · Schisandra Berry — "Five Flavor Seed"</div>
+  <h2 class="herb-title">A Soviet military secret and the only fruit with all five tastes</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Warm</span>
+    <span class="pill pill-flavor">All five flavors</span>
+    <span class="pill pill-organ">Lung · Kidney · Heart</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Schisandra is a "sealer" that <strong>prevents the body from leaking vital energy</strong>. It astringes the Lungs to stop chronic cough, tonifies the Kidneys for night sweats and frequent urination, generates fluids to halt excessive sweating, and calms the Heart for insomnia. Think of it as helping the body hold onto what it already has rather than adding something new.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      In the 1940s–60s, the <strong>Soviet military secretly studied schisandra</strong> as a natural performance enhancer. Classified research tested formulas on military cadets, cosmonauts, and Olympic athletes. It improved endurance, sharpened visual acuity, and enhanced mental clarity under extreme stress. <em class="gold">The term "adaptogen" itself was coined in 1947</em> to describe these stress-resistance substances — schisandra was the founding example. It remains <strong>the only known fruit naturally containing all five fundamental tastes</strong>.
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>Schisandrin B reduced liver damage markers by <strong>78%</strong> in research models through enhanced mitochondrial glutathione status. Human RCTs confirmed improvement in skeletal muscle strength in older adults and significant reduction in menopausal hot flashes and palpitations.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Simmer 3–6g lightly crushed berries in 300ml water 15 min at gentle simmer</li>
+      <li>Traditional dose: 20–30 drops tincture in water, twice daily</li>
+      <li>Steep in raw honey 2–4 weeks for a schisandra-infused honey</li>
+      <li><strong>Avoid after 6–7 PM</strong> — mild stimulating effects</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Critical:</strong> Avoid in pregnancy (may stimulate uterine contractions) and epilepsy. Critical interaction with tacrolimus. Inhibits CYP3A4 and CYP1A2 — affects many common medications. May increase sedation with benzodiazepines.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Shēng Mài Sǎn (生脉散)</strong> — "Generate the Pulse Powder." Three herbs: ginseng + ophiopogon + schisandra. In modern Chinese hospitals, administered as an <em class="gold">IV drip for cardiovascular emergencies</em>. A bridge between ancient formula and ICU medicine.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERB 10 — LOTUS SEED -->
+<!-- ══════════════════════════════════════ -->
+<div class="herb" id="lotus">
+  <div class="herb-number">Herb 10 / 10</div>
+  <div class="herb-chinese">莲子</div>
+  <div class="herb-pinyin">Lián Zǐ · Lotus Seed</div>
+  <h2 class="herb-title">Seeds that germinated after 1,300 years of dormancy</h2>
+
+  <div class="pills">
+    <span class="pill pill-nature">Neutral</span>
+    <span class="pill pill-flavor">Sweet · Astringent</span>
+    <span class="pill pill-organ">Heart · Spleen · Kidney</span>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What TCM uses it for</div>
+    <p>Lotus seed is a gentle stabilizer that simultaneously <strong>tonifies the Spleen</strong> (digestion, stops chronic diarrhea), <strong>tonifies the Kidneys</strong> (frequent urination, nocturnal emissions), and <strong>nourishes the Heart</strong> (anxiety, palpitations, insomnia). Its neutral nature means it's safe for nearly all constitution types.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">The thing most people don't know</div>
+    <div class="highlight-box">
+      In 1982, UCLA researchers obtained ancient lotus seeds from a dry lakebed in China. Filed through their hard shells — <strong>they sprouted within four days.</strong> Radiocarbon dating confirmed the oldest seed was <em class="gold">1,288 years old</em>. The secret is a protein-repair enzyme (PIMT) — the first protein-repair enzyme ever discovered — that continuously fixes age-damaged proteins over centuries. Also: the tiny green plumule inside each seed is a <strong>separate herb in TCM</strong> (Lián Zǐ Xīn). Leave it in to calm anxiety; remove it for purely digestive purposes. <em class="terra">Keeping or removing it changes the medicine entirely.</em>
+    </div>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">What science says</div>
+    <p>The alkaloid <strong>neferine</strong> (in the plumule) induced dose-dependent cell death in lung and cervical cancer cells while showing minimal toxicity to normal cells. It also protects endothelial cells from high-glucose damage — relevant for diabetic vascular disease.</p>
+  </div>
+
+  <div class="herb-section">
+    <div class="herb-section-label">How to use it</div>
+    <ul class="use-list">
+      <li>Soak 15–30 seeds overnight, simmer with rice for lotus seed congee — ideal evening meal for insomnia</li>
+      <li>Make sweet soup (Lian Zi Tang) with rock sugar and red dates</li>
+      <li>Add 10–20g to chicken or vegetable soups during slow-cooking</li>
+      <li><strong>The plumule trick:</strong> leave green sprout in for anxiety/insomnia; remove for digestion only</li>
+    </ul>
+  </div>
+
+  <div class="warning"><strong>⚠ Caution:</strong> Avoid with constipation — astringent properties further bind the bowels. Avoid with abdominal distension or excess patterns. Those on cancer or cardiovascular drugs should consult a provider given neferine's cellular activity.</div>
+
+  <div class="formula">
+    <div class="formula-label">Classic Formula</div>
+    <p><strong>Qīng Xīn Lián Zǐ Yǐn (清心莲子饮)</strong> — From the Song Dynasty government pharmacopoeia (1107 CE). Treats Heart Fire blazing upward (anxiety, insomnia) while damp-heat pours downward (urinary problems) — treating seemingly unrelated symptoms as one interconnected pattern.</p>
+  </div>
+</div>
+
+<!-- SUMMARY TABLE -->
+<div class="summary">
+  <h2>Quick Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Herb</th>
+        <th>Nature</th>
+        <th>Key Organs</th>
+        <th>Core Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🫚 Ginger</td><td>Warm</td><td>Lung, Stomach</td><td><strong>Disperses cold, stops nausea</strong></td></tr>
+      <tr><td>🔴 Goji</td><td>Neutral</td><td>Liver, Kidney</td><td><strong>Nourishes Yin, brightens eyes</strong></td></tr>
+      <tr><td>🟥 Jujube</td><td>Warm</td><td>Spleen, Heart</td><td><strong>Tonifies Qi, harmonizes formulas</strong></td></tr>
+      <tr><td>🌿 Astragalus</td><td>Slightly warm</td><td>Lung, Spleen</td><td><strong>Strengthens immune defense</strong></td></tr>
+      <tr><td>🍄 Reishi</td><td>Warm</td><td>All five Yin organs</td><td><strong>Calms spirit, whole-body tonic</strong></td></tr>
+      <tr><td>🌸 Chrysanthemum</td><td>Slightly cold</td><td>Liver, Lung</td><td><strong>Clears heat, benefits eyes</strong></td></tr>
+      <tr><td>🟡 Longan</td><td>Warm</td><td>Heart, Spleen</td><td><strong>Nourishes blood, calms mind</strong></td></tr>
+      <tr><td>🫐 Hawthorn</td><td>Slightly warm</td><td>Spleen, Heart</td><td><strong>Dissolves food stagnation</strong></td></tr>
+      <tr><td>🍒 Schisandra</td><td>Warm</td><td>Lung, Kidney, Heart</td><td><strong>Astringes leaking energy</strong></td></tr>
+      <tr><td>⚪ Lotus Seed</td><td>Neutral</td><td>Heart, Spleen, Kidney</td><td><strong>Stabilizes, nourishes, calms</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CONCLUSION -->
+<div class="conclusion">
+  <h2>A pharmacy hiding in plain sight</h2>
+  <p>The most striking pattern across these ten herbs is how consistently modern pharmacology validates specific TCM classifications that predate the scientific method by millennia. <strong>Ginger's anti-nausea action works through the same receptor pathway as prescription Zofran.</strong> Astragalus's "longevity tonic" reputation maps precisely onto telomerase activation. Goji's eye-health claim rests on zeaxanthin concentrations unmatched in nature.</p>
+  <p>Three practical principles to remember. <strong>First, thermal nature matters</strong> — warming herbs suit people who run cold; cooling herbs suit those who run hot. Using the wrong temperature can worsen symptoms. <strong>Second, nearly every herb listed interacts with pharmaceutical drugs</strong> — always check before combining. <strong>Third, these herbs work through accumulation, not acute dosing.</strong> Weeks and months of consistent daily use — not heroic single doses.</p>
+  <p>Start with the food-grade herbs: jujube, goji, longan, lotus seed. Add them to cooking. See what changes.</p>
+  <div class="conclusion-account">
+    @dailyherbchinese · One herb. Every day.
+  </div>
+</div>
+
+</body>
+</html>
